@@ -1,0 +1,363 @@
+1. Сделать папку dir_1					
+ 2. Зайти в папку dir_1
+ 3. Создать папку inner_dir_1
+ 4. Посмотреть где ты находишься
+ 5. Находясь в папке dir_1 создать пустой текстовый файл tf_1.txt
+ 6. Находясь в папке dir_1 через команду cat создать текстовый файл tf_2.txt со следующими строками:
+- the first 1
+- the second 2
+- the third 3
+ 7. Зайти в папку inner_dir_1
+ 8. Через cat сделать текстовый файл tf_3.txt  c любыми строками
+ 9. Через cat добавить в текстовый файл tf_3.txt строку “the second 2”
+ 10. Через cat добавить в текстовый файл tf_3.txt строку “the sec 2”
+ 11. Через cat добавить в текстовый файл tf_2.txt строку “the sec 3”
+ 12. Через cat добавить в текстовый файл tf_3.txt строку “the SeCoNd 2”
+ 13. Через cat добавить в текстовый файл tf_2.txt строку “the seConD 2”
+ 14. Сделать текстовый файл tf_4.txt в котором будет 15 строк.
+ 15. Сделать текстовый файл tF_5.txt в котором будет 13 строк.
+ 16. Вывести список всех файлов в папке.
+ 17. Выйти из папки inner_dir_1
+ 18. Вывести содержимое файла tf_3.txt в терминал.
+ 19. Найти путь к файлу tf_4.txt
+ 20. Отчистить файл tf_4.txt от содержимого без удаления самого файла.
+ 21. Найти путь к файлам у которых есть  “tf” в названии.
+ 22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
+ 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
+ 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+ 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+ 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+ 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+ 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+ 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+ 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+ 31. Найти все строки во всех файлах где нет комбинации “second”
+ 32. Найти только название и путь к файлам где нет комбинации “second”
+ 33. Вывести в терминал 4 последних строк любого текстового файла
+ 34. Вывести в терминал 4 первые строки любого текстового файла.
+ 35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
+ 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+ 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+ 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+ 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+ 40. Просто вывести в терминал строку “Good job!!”1.    
+  id
+    2  git config
+    3  git config --get
+    4  passwd
+    5  git config user.name "IgorQA"
+    6  git config --global user.name "Mona Lisa"
+    7  шв
+    8  id
+    9  git config --global user.name 
+   10  git config --global user.name "IgorQA"
+   11  id
+   12  id
+   13  git config --global user.email "qaeng@ukr.net"
+   14  id
+   15  echo 'export PS1="IgorQA \W $ " ' >> ~/.bashrc
+   16  source ~/.bashrc
+   17  ls -la
+   18  dir
+   19  pwd
+   20  top
+   21  git clone git@github.com:Afoniazap/Terminal.git
+   22  ls
+   23  la
+   24  dir
+   25  ls -la
+   26  id
+   27  git clone git@github.com:Afoniazap/Terminal.git
+   28  cd Terminal
+   29  ssh -keygen -t rsa -b 4096 -C "qaeng@ukr.net
+   30  ~/.ssh
+   31  cat ~/.ssh/id_rsa.pub
+   32  ssh -keygen -t rsa -b 4096 -C "qaeng@ukr.net
+   33  ssh-keygen -t rsa -b 4096 -C "qaeng@ukr.net"
+   34  cat ~/.ssh/id_rsa.pub
+   35  git clone git@github.com:Afoniazap/Terminal.git
+   36  cd Terminal
+   37  git status
+   38  cat new.txt
+   39  cat > new.txt
+   40  пше ыефегы
+   41  git status
+   42  git add new.txt
+   43  git commit -m "new file"
+   44  git push
+   45  git status
+   46  find --help
+   47  locate *.log
+   48  find *.log
+   49  find ./ -name "*.log"
+   50  find ./dz -name "*.log"
+   51  find ./ -name "*.log"
+   52  find ./ -name "*.txt"
+   53  find ../ -name "*.log"
+   54  find /mnt/c -name "*.log"
+   55  sudo find / -name "*.log"
+   56  find / -name "*.log"
+   57  grep tail -f /proc/registry/HKEY_CLASSES_ROOT/.log
+   58  whoami
+   59  cat /proc/registry/HKEY_CLASSES_ROOT/.log
+   60  tail -f /proc/registry/HKEY_CLASSES_ROOT/.log
+   61  tail -f new.txt
+   62  git status
+   63  git add new.txt
+   64  git commit -m "new word"
+   65  git push
+   66  find ./dz -name "*.log"
+   67  whoami
+   68  find / -name "*.log"
+   69  tail -f /proc/registry/HKEY_CLASSES_ROOT/.log
+   70  tail -f /proc/registry/HKEY_CLASSES_ROOT/*.log
+   71  tail -f /tmp/wmsetup.log
+   72  tail -f /tmp/chrome_installer.log
+   73  cd Terminal
+   74  git status
+   75  id
+   76  whoami
+   77  [200~export PS1='IgorQA \W $(git branch 2>/dev/null | grep -e '\''^\* '\'' | sed -E '\''s/^\\* (.+)$/(\1) /'\'')$ '
+   78  export PS1='IgorQA \W $(git branch 2>/dev/null | grep -e '\''^\* '\'' | sed -E '\''s/^\\* (.+)$/(\1) /'\'')$ '
+   79  source ~/.bashrc
+   80  cd terminal
+   81  git status
+   82  cd Terminal
+   83  cat > new.txt
+   84  git status
+   85  cat ~/.bashrc
+   86  source ~/.bashrc
+   87  cat ~/.bashrc
+   88  cat export PS1='IgorQA \W $(parse_git_branch) $(parse_git_changes)$ '> ~/.bashrc
+   89  cat export PS1='IgorQA \W $(parse_git_branch) $(parse_git_changes)$ '> ~/.bashrc
+   90  parse_git_branch() {   git branch 2>/dev/null | grep -e '\* ' | sed -E 's/\* (.+)/(\1)/'; }
+   91  parse_git_changes() {   git status --short --untracked-files=all | awk 'BEGIN {ORS=""} /^ / {print $2 ", "}'; }
+   92  export PS1='IgorQA \W $(parse_git_branch) $(parse_git_changes)$ '
+   93  source ~/.bashrc
+   94  cd ..
+   95  cd Terminal
+   96  git commit -m "F"
+   97  git add new.txt
+   98  git push
+   99  cat 1.txt
+  100  >cat 1.txt
+  101  cat 1.txt
+  102  vim 1.txt
+  103  git add 1.txt
+  104  git commit -m "change"
+  105  git push
+  106  vim 1.txt
+  107  git commit -m "change2"
+  108  git push
+  109  git status
+  110  git add 1.txt
+  111  git commit -m "change2"
+  112  git push
+  113  git status
+  114  cd..
+  115  la -ls
+  116  la 
+  117  ls
+  118  mkdir group_36
+  119  cp 1.txt> ./group_36/1n.txt
+  120  cp ./1.txt > ./group_36/1n.txt
+  121  cp ,,/*.txt ../DZ/Terminal/group_36
+  122  cp ,/*.txt ./DZ/Terminal/group_36
+  123  cp E:/Git/DZ/Terminal/*.txt E:Git/DZ/Terminal/group_36
+  124  git status
+  125  git add 
+  126  git add.
+  127  git add group_36/ DzhistoryTerminal.txt, cat
+  128  git push
+  129  git commit -m "change3"
+  130  git add group_36/ DzhistoryTerminal.txt, cat
+  131  git add DzhistoryTerminal.txt
+  132  git commit -m "change3"
+  133  git add.
+  134  git add .
+  135  git commit -e "change3"
+  136  git status
+  137  git push
+  138  git commit -e "change4"
+  139  git .
+  140  git add .
+  141  git commit -m "change3"
+  142  git push
+  143  cd group_36
+  144  cp E:/Git/DZ/Terminal/*.txt E:Git/DZ/Terminal/group_36
+  145  cp //Git/DZ/Terminal/*.txt /Git/DZ/Terminal/group_36
+  146  cp /E/Git/DZ/Terminal/*.txt /E/Git/DZ/Terminal/group_36
+  147  ls
+  148  git add .
+  149  git commit -m "change4"
+  150  git push
+  151  [200~parse_git_branch() {   git branch 2>/dev/null | grep -e '\* ' | sed -E 's/\* (.+)/(\1)/'; }
+  152  parse_git_changes() {   git status --short --untracked-files=all | awk 'BEGIN {ORS=""} /^ / {print $2 ", "}'; }
+  153  export PS1='IgorQA \W $(parse_git_branch) $(parse_git_changes)$ '
+  154  source ~/.bashrc
+  155  cat ~/.bashrc
+  156  cat ~/.bashrc
+  157  cd..
+  158  cd..
+  159  cat ~/.bashrc
+  160  export PS1='IgorQA \W $(parse_git_branch) $(parse_git_changes)$ '
+  161  source ~/.bashrc
+  162  cd..
+  163  cat ~/.bashrc
+  164  cp ~/Terminal/README.md ~/group_36
+  165  find /.bashrc
+  166  find / -name ".bashrc"
+  167  ls
+  168  cd..
+  169  git pull
+  170  git status
+  171  git clone git@github.com:Afoniazap/MywebsiteResume.git
+  172  ls
+  173  ls -la
+  174  git status
+  175  git pull
+  176  git push
+  177  git add.
+  178  git add .
+  179  git commit -m "change00"
+  180  git push
+  181  ls
+  182  cd MywebsiteResume
+  183  ls
+  184  git status
+  185  git add .
+  186  git commit -m "rem"
+  187  git push
+  188  git push
+  189  git pull
+  190  git push
+  191  git add .
+  192  git push
+  193  git pull
+  194  git status
+  195  git push
+  196  git pull
+  197  git status
+  198  git commit -m "em"
+  199  git push
+  200  git pull
+  201  git pull
+  202  cd terminal
+  203  git status
+  204  git pull
+  205  git add .
+  206  git commit -m "m"
+  207  git push
+  208  ls
+  209  clear
+  210  mkdir DZ_terminal
+  211  cd DZ_terminal
+  212  mkdir dir_1
+  213  cd dir_1
+  214  mkdir inner_dir_1
+  215  ls -la
+  216  pwd
+  217  cd DZkenzov
+  218  cd DZ_terminal
+  219  cd dir_1
+  220  pwd
+  221  touch tf_1.txt
+  222  cat > tf_2.txt
+  223  ls
+  224  cd inner_dir_1
+  225  cat > tf_3.txt
+  226  cat >> tf_3.txt
+  227  cat >> tf_3.txt
+  228  cat >> tf_3.txt
+  229  cat >> tf_3.txt
+  230  cat >> tf_3.txt
+  231  nano tf_4.txt
+  232  ls -l
+  233  nano tf_4.txt
+  234  for i in {1..15} do echo "Строка $i" >> tf_4.txt done
+  235  touch script
+  236  touch 
+  237  cat script
+  238  cat > script
+  239  chmod +x ./myscript
+  240  ls
+  241  chmod +x ./script
+  242  ./script
+  243  cat >> script
+  244  ./script
+  245  ./script
+  246  ./script
+  247  ./script
+  248  del tf_4.txt
+  249  rm tf_4.txt
+  250  ./script
+  251  cat > script
+  252  cat script
+  253  vim script
+  254  ./script
+  255  ls
+  256  cd ..
+  257  cat ./tf_3.txt
+  258  cat //tf_3.txt
+  259  cat inner_dir_1/tf_3.txt
+  260  cat //tf_3.txt
+  261  cat ../tf_3.txt
+  262  find tf_4.txt
+  263  find -name tf_4.txt
+  264  ls
+  265  cd ..
+  266  > ./inner_dir_1/tf_4.txt
+  267  > inner_dir_1/tf_4.txt
+  268  > tf_4.txt
+  269  > /inner_dir_1/tf_4.txt
+  270  find -name tf_4.txt
+  271  > ./dir_1/inner_dir_1/tf_4.txt
+  272  find -name *tf*.txt
+  273  find -name "*tf*"
+  274  find -iname "*tf*"
+  275  pwd
+  276  cd dir_1
+  277  grep -r "sec" .
+  278  grep "sec" .
+  279  grep -r "sec" .
+  280  grep -d skip -r "sec" .
+  281  grep -ri "sec" .
+  282  ls | grep "sec"
+  283  ls | grep "sec" .
+  284  ls -l
+  285  ls -l | grep "sec"
+  286  grep "sec"
+  287  grep "sec" *
+  288  grep -i "sec" *
+  289  grep -i "sec" *
+  290  grep -w "sec" *
+  291  grep -w "sec" *
+  292  grep -i -w "sec" *
+  293  grep -i -w "sec" *
+  294  grep "second" *
+  295  grep -i "second" *
+  296  grep -r "second" .
+  297  grep -l "second" *
+  298  grep -rL "second" .
+  299  grep -r -v "second" .
+  300  grep -rL "second" .
+  301  tail -n 4 tf_2.txt
+  302  tail -n 4 tf_5.txt
+  303  tail -n 4 ./inner_dir_1/tf_5.txt
+  304  head -n 4  ./inner_dir_1/tf_5.txt
+  305  mkdir New && echo "Содержимое" > New/new.txt
+  306  grep -rl "sec" . | while read file; do mv "$file" ./New/; done
+  307  for file in $(grep -rl "sec" .); do mv "$file" ./; done
+  308  for file in $(grep -rl "sec" .); do cp "$file" ./New; done
+  309  grep -rl "sec" . | while read file; do cp "$file" ./New/; done
+  310  grep -r "second" .
+  311  grep -r "sec" --include "*.txt" . > newFile.txt
+  312  grep -rl "sec" . | while read file; do rm -f "$file";done
+  313  echo "Good jobgrep -rl "sec" . | while read file; do rm -f "$file";done"
+  314  echo "Good jobecho "Good jobgrep -rl "sec" . | while read file; do rm -f "$file";done""
+  315  echo "Good jobecho "Good jobecho "Good jobgrep -rl "sec" . | while read file; do rm -f "$file";done"""
+  316  echo "Good jobecho "Good jobecho "Good jobecho "Good jobgrep -rl "sec" . | while read file; do rm -f "$file";done""""; clear
+  317  clear
+  318  echo "hi" 
+  319  histoty > history2.txt
+  320  history > history2.txt
