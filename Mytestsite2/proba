@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block {
+  width: calc((100% - 126px) / 3);
+  border: #ccc solid 1px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.btn {
+  position: absolute;
+  width: 50px;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -25px;
+  border: #ccc solid 1px;
+  text-align: center;
+}
+<div class="row">
+  <div class="block">
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="btn">Кнопка</div>
+  </div>
+  <div class="block">
+    <br /><br /><br /><br /><br /><br />
+    <div class="btn">Кнопка</div>
+  </div>
+  <div class="block">
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="btn">Кнопка</div>
+  </div>
+</div>
