@@ -75,8 +75,8 @@ Part 2
 3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта	 git checkout Bug_reports && vim bug_report.txt	
 4. Запушить структуру багрепорта на внешний репозиторий				commit -am "br" ; git push origin Bag_reports			
 5. Вмержить ветку Bag Reports в Main						 git checkout main ;  git pull origin main ; git merge Bag_reports ; git push origin main
-6. Запушить main на внешний репозиторий.
-7. В ветке CheckLists набросать структуру чек листа.				
-8. Запушить структуру на внешний репозиторий
-9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
-10. Синхронизировать Внешнюю и Локальную ветки Main
+6. Запушить main на внешний репозиторий.					git checkout Checklists && vim checklist.txt
+7. В ветке CheckLists набросать структуру чек листа.							
+8. Запушить структуру на внешний репозиторий					 git add checklist.txt && git commit -m "chl1" ; git push origin Checklists
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main		 gh pr create --base main --head Checklists --title "Описание Pull Request"
+10. Синхронизировать Внешнюю и Локальную ветки Main				git checkout main ; git pull origin main ; git push origin main
