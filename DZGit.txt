@@ -71,12 +71,12 @@ Part 2
 - Charles
 - Mobile testing
 
-2. Запушить все ветки на внешний репозиторий
-3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
-4. Запушить структуру багрепорта на внешний репозиторий
-5. Вмержить ветку Bag Reports в Main
+2. Запушить все ветки на внешний репозиторий			for branch in postman Jmeter Checklists Bagreports Sql Charles Mobiletesting; do git push origin "$branch" done
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта	 git checkout Bug_reports && vim bug_report.txt	
+4. Запушить структуру багрепорта на внешний репозиторий				commit -am "br" ; git push origin Bag_reports			
+5. Вмержить ветку Bag Reports в Main						 git checkout main ;  git pull origin main ; git merge Bag_reports ; git push origin main
 6. Запушить main на внешний репозиторий.
-7. В ветке CheckLists набросать структуру чек листа.
+7. В ветке CheckLists набросать структуру чек листа.				
 8. Запушить структуру на внешний репозиторий
 9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
 10. Синхронизировать Внешнюю и Локальную ветки Main
