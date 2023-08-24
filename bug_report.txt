@@ -1,0 +1,29 @@
+Bug Report
+
+Bug Title:
+UI Button Alignment Issue
+
+Description:
+The 'Submit' button on the login page is not properly aligned in the center.
+
+Steps to Reproduce:
+1. Open the application.
+2. Navigate to the login page.
+3. Observe the position of the 'Submit' button.
+
+Expected Behavior:
+The 'Submit' button should be horizontally centered on the page.
+
+Actual Behavior:
+The 'Submit' button is aligned to the left side.
+
+Application Version:
+1.2.3
+
+Attached Screenshots:
+
+
+Additional Information:
+
+
+
