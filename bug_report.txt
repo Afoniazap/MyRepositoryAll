@@ -18,7 +18,7 @@ Actual Behavior:
 The 'Submit' button is aligned to the left side.
 
 Application Version:
-1.2.3
+1.2
 
 Attached Screenshots:
 
