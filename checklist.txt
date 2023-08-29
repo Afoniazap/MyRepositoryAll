@@ -1,7 +1,6 @@
 1. Installation
    - [ ] Verify the app installation process on iOS and Android devices.
    - [ ] Check if the app installs without errors or crashes.
-
 2. User Authentication
    - [ ] Test user login with valid credentials.
    - [ ] Test user login with incorrect credentials.
