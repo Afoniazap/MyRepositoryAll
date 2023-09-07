@@ -7,3 +7,5 @@ parse_git_changes() {
 }
 
 export PS1='IgorQA \W $(parse_git_branch) $(parse_git_changes)$ '
+
+//git init , ssh-keygen -t rsa -C "nickname", (копируем rsa.pub в git web, clone git@... ссылку с git web), git pull origin master
