@@ -1,0 +1,198 @@
+SELECT CustomerName,Price FROM [Customers] c
+JOIN Orders o ON c.CustomerID = o.CustomerID
+JOIN OrderDetails od ON od.OrderID = o.OrderID
+JOIN Products p ON p.ProductID = od.ProductID
+
+по цепочке подкл таблицы и выводим необходимое
+
+SELECT 'Customers' as TableName , City, CustomerName FROM [Customers]
+UNION 
+SELECT 'Suppliers' AS TableName, City, ContactName FROM Suppliers
+ORDER BY TableName
+
+обьединяем два запроса
+
+
+SELECT c.* FROM Customers c
+LEFT JOIN Orders o 
+ON c.CustomerID = o.CustomerID
+WHERE OrderID IS NULL
+
+
+находим людей не сделавших заказ(OrderId IS NULL, IS NOT NULL сделавших)
+
+
+SELECT ProductName AS "Продукты",Price AS "Цена", Price - Price*0.1 "цена со скидкой",SupplierName,City FROM Suppliers
+a JOIN Products b ON a.SupplierID=b.SupplierID
+
+
+делаем дополнительніе столбики со скидкой и обьединяем табл
+SELECT ShipperName,SupplierName FROM Shippers s
+JOIN Orders o ON s.ShipperID = o.OrderID
+JOIN OrderDetails od ON o.OrderID = od.OrderID
+JOIN Products p ON p.ProductID = od.ProductID
+JOIN Suppliers s ON p.SupplierID = s.SupplierID
+
+SELECT email FROM students
+WHERE email LIKE '%w%' AND email LIKE '%1%'
+//Вивести всі email котрі мають в собі букву w і цифру 1
+
+select en.name,p.prof_lvl,s.age,s.lastname from students s
+join teachers t on s.teacher_id = t.id
+join employee_name en on t.emp_id = en.id                              //Вивести яке ім'я та який проф. рівень викладача студента з віком 45. Вік та прізвище студента також вивести.
+join prof p on t.prof_id = p.id
+where s.age = 45
+
+select name,prof_lvl from employee_name en
+  join teachers t on en.id = t.emp_id                       // Вивести ім'я і проф. рівень викладачів
+  join prof p on t.prof_id = p.id
+
+select name from employee_name
+join teachers t on employee_name.id = t.emp_id                            // Вивести ім'я викладача,у якого немає студентів
+left join students s on t.id = s.teacher_id
+where teacher_id is null
+
+select lastname,firstname,age from students s
+  join teacher_assistants ta on s.assistant_id = ta.id                   // Необхідно вивести ім'я, прізвище і  вік студентів, з якими працює Alina (аcистент викладача).
+join employee_name en on ta.emp_id = en.id
+where emp_id = (select id from employee_name where name = 'Alina')
+
+select name from employee_name en
+  join timesheet t on en.id = t.emp_id
+  join salary s on t.salary_id = s.id             // Вивести ім'я працівника, погодинна ставка якого складає  350 грн, чи меньше.
+  where salary_hours<=350
+
+SELECT 'Shippers' as TableName, ShipperName  FROM Shippers
+UNION
+SELECT 'Suppliers' as TableName, SupplierName FROM Suppliers
+
+НАЗІВАЕМ ИМЯ В СТОЛБИКЕ
+
+SELECT ShipperName as Shippers FROM [Shippers]
+UNION
+SELECT SupplierName as Suppliers FROM Suppliers
+ORDER BY Suppliers
+
+SELECT имена_столбцов_таблицы_1, имена_столбцов_таблицы_2 FROM имя_таблицы_1, имя_таблицы_2;
+
+
+SELECT e.EmployeeID,FirstName, COUNT (o.EmployeeID)
+FROM Employees e
+Join Orders o ON e.EmployeeID = o.EmployeeID
+GROUP BY e.EmployeeID   //Запрос работников принявших заказі
+
+SELECT e.EmployeeID,FirstName, COUNT (o.EmployeeID)
+FROM Employees e
+Join Orders o ON e.EmployeeID = o.EmployeeID
+WHERE FirstName NOT IN ('Nancy','Andrew','Steven')
+GROUP BY e.EmployeeID     //Запрос работников принявших заказі без некоторіх имен
+
+SELECT e.EmployeeID,FirstName, COUNT (o.EmployeeID)
+FROM Employees e
+Join Orders o ON e.EmployeeID = o.EmployeeID
+WHERE FirstName NOT IN ('Nancy','Andrew','Steven')
+GROUP BY e.EmployeeID
+HAVING COUNT (o.EmployeeID) > 15 //Запрос работников принявших заказі без некоторіх имен и с условием фильтром
+
+SELECT e.EmployeeID, FirstName, COUNT(o.EmployeeID)
+FROM Employees AS e
+JOIN Orders o ON e.EmployeeID  = o.EmployeeID
+WHERE FirstName NOT IN (SELECT FirstName FROM Employees WHERE EmployeeID IN (1,2,3,4,5))
+GROUP BY e.EmployeeID
+HAVING COUNT(o.EmployeeID) > 15  ////Запрос работников принявших заказі без некоторіх имен и с подзапросом
+
+SELECT Address, SUM(Price) SUM 
+FROM Suppliers s
+Join Products p ON s.SupplierID = p.SupplierID
+GROUP BY Address
+HAVING AVG(Price) > 45
+
+SELECT ProductName, Price From Products
+Where Price > (Select AVG(Price) From Products)  //назв товара и цена больше средней
+
+SELECT Count(Distinct ShipperID) from Orders  //кол-во перевозчиков
+
+
+Select Count * from Shippers //кол-во перевозчиков
+
+INSERT INTO Customers(CustomerName,Address,PostalCode)
+ Values ('Иван', 'Винница', '353424'),('','','')  //добавляем 
+
+Delete from Customers
+where country = 'Mexico'    //удаляем
+
+Delete from Customers
+where country is null          
+
+SELECT MAX(amount) FROM sales2005
+Данный запрос вернет нам сумму 5000. Для того, чтобы понять кто из
+сотрудников получает максимальную зарплату достаточно сделать:
+SELECT person FROM sales2005 WHERE amount = 5000
+Но в явном виде максимум неизвестен. Сегодня он 5000, а завтра уже
+10000. Нужно универсальное решение, которого можно добиться с
+помощью использования агрегтов:
+SELECT person FROM sales2005
+WHERE amount = (SELECT MAX(amount) FROM sales2005)
+И получилось! Обратите внимание на синтаксис. Через подзапрос
+мы достаём одиночное значение (5000), а дальше оно встаёт в
+основной запрос. Таким образом, благодаря подзапросам, мы можем
+использовать сколь угодно сложную логику.
+
+Исходя из изученных нами положений, выведем общий синтаксис
+запроса:
+SELECT [DISTINCT] {список_вывода_через_запятую | *}
+FROM таблица_1 AS псевдоним_1
+[INNER/LEFT/RIGHT/FULL] JOIN таблица_2 AS псевдоним_2
+ON псевдоним_1.поле_1 = псевдоним_2.поле_2
+[INNER/LEFT/RIGHT/FULL] JOIN ... --- сколько угодно JOIN’ов
+--- возможны множественные условия
+--- с AND, OR, IN и т.д.
+
+ON ... AND ...
+WHERE условие_отбора_записей
+GROUP BY поля_через_запятую
+HAVING условие_отбора_групп --- с AND, OR, IN ит.д.
+UNION / EXCEPT /INTERSECT --- если ведётся работа с множествами
+SELECT .... -- новый запрос (множество) аналогично
+...
+ORDER BYполя_через_запятую
+
+
+
+Написать запрос по w3schools.com. Вывести (выбрать) максимальный номер заказа сотрудника Buchanan Steven. (Result: Number of Records: 1. Если у вас получается No result - запрос составлен неверно). (отправляйте запрос текстом)
+*
+…
+/5
+SELECT MAX(orderID) FROM Orders o join Employees e on o.employeeID = e.employeeID where lastname = 'Buchanan' and firstname = 'Steven'
+
+
+Написать запрос по w3schools.com. Вывести (выбрать) товары, цены которых больше средней цены по всем продуктам. (Result: Number of Records: 25. Если у вас получается No result - запрос составлен неверно). (отправляйте запрос текстом)
+*
+…
+/5
+SELECT ProductName FROM Products where Price > (select AVG(Price) from Products)
+
+Написать запрос по w3schools.com. Посчитать и вывести для каждого заказа его итоговую стоимость при помощи цены и количества для каждого товара.(Result: Number of Records: 196. Если у вас получается No result - запрос составлен неверно). (отправляйте запрос текстом)
+*
+…
+/5
+SELECT ​ o.OrderID, SUM(p.Price*od.Quantity*p.ProductID) FROM Orders o join OrderDetails od on o.OrderID = od.OrderID join Products p on od.ProductID = p.ProductID Group by o.OrderID
+
+Написать запрос по w3schools.com. Создать пользователя в таблице Employees с номером 11. (Result: Number of Records: 1. Если у вас получается No result - запрос составлен неверно). (отправляйте запрос текстом)
+*
+…
+/5
+Insert into Employees (EmployeeID) values (11);
+
+Написать запрос по w3schools.com. Изменить (обновить) значение в колонке EmployeeID на 11 для CustomerID in (89, 90).(Result: Number of Records: 3. Если у вас получается No result - запрос составлен неверно). (отправляйте запрос текстом)
+*
+…
+/5
+update Orders set EmployeeID = 11 where CustomerID in (89,90)
+ 
+ 
+Написать запрос по w3schools.com. Для товаров, у которых цена больше средней цены по всем продуктам, повысить цену еще на 10% (обновить значения цены).(Result: Number of Records: 25. Если у вас получается No result - запрос составлен неверно). (отправляйте запрос текстом)
+*
+…
+/5
+update Products set price = price + (price * 0.1) where Price > (select AVG(Price) from Products)
