@@ -104,3 +104,4 @@ Outcomes (ship, battle, result)
 		SELECT DISTINCT 'Laptop' AS type, L.model, L.speed
 		FROM Laptop L
 		WHERE L.speed < ALL (SELECT P.speed FROM PC P)
+18. 
