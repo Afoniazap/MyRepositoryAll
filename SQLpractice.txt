@@ -105,3 +105,5 @@ Outcomes (ship, battle, result)
 		FROM Laptop L
 		WHERE L.speed < ALL (SELECT P.speed FROM PC P)
 18. 
+19.
+
