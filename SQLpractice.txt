@@ -104,3 +104,35 @@ Outcomes (ship, battle, result)
 		SELECT DISTINCT 'Laptop' AS type, L.model, L.speed
 		FROM Laptop L
 		WHERE L.speed < ALL (SELECT P.speed FROM PC P)
+18. Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+		SELECT p.maker, MIN(pt.price) AS price
+FROM Product p
+JOIN Printer pt ON p.model = pt.model
+WHERE pt.color = 'y'
+GROUP BY p.maker
+HAVING MIN(pt.price) = (
+    SELECT MIN(price)
+    FROM Printer
+    WHERE color = 'y'
+)
+19. Для каждого производителя, имеющего модели в таблице Laptop, найдите средний размер экрана выпускаемых им ПК-блокнотов.
+Вывести: maker, средний размер экрана.
+		SELECT p.maker, AVG(l.screen) AS average_screen_size
+		FROM Product p
+		JOIN Laptop l ON p.model = l.model
+		GROUP BY p.maker
+		HAVING COUNT(l.model) > 0;
+20. Найдите производителей, выпускающих по меньшей мере три различных модели ПК. Вывести: Maker, число моделей ПК.
+		SELECT p.maker, Count(model)
+		FROM Product p
+		JOIN PC P ON p.model = P.model
+		GROUP BY p.maker
+		HAVING COUNT(P.model) >= 3;
+21. Найдите максимальную цену ПК, выпускаемых каждым производителем, у которого есть модели в таблице PC.
+Вывести: maker, максимальная цена.
+		SELECT P.maker, MAX(PC.price) AS max_price
+		FROM Product P
+		INNER JOIN PC ON P.model = PC.model
+		GROUP BY P.maker;
+
+		
