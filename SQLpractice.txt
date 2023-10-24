@@ -104,6 +104,7 @@ Outcomes (ship, battle, result)
 		SELECT DISTINCT 'Laptop' AS type, L.model, L.speed
 		FROM Laptop L
 		WHERE L.speed < ALL (SELECT P.speed FROM PC P)
+<<<<<<< HEAD
 18. Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
 		SELECT p.maker, MIN(pt.price) AS price
 FROM Product p
@@ -136,3 +137,8 @@ HAVING MIN(pt.price) = (
 		GROUP BY P.maker;
 
 		
+=======
+18. 
+19.
+
+>>>>>>> dd56910c03ac10d1ad370c25550902298c21a92f
