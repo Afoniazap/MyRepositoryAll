@@ -117,3 +117,4 @@ history -w history.txt
 																	grep -r "sec" --include "*.txt" . > newFile.txt
  39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”					grep -rl "sec" . | while read file; do rm -f "$file";done
  40. Просто вывести в терминал строку “Good job!!”						echo "Good job!!"
+..
