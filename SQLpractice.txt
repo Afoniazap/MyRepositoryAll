@@ -137,8 +137,4 @@ HAVING MIN(pt.price) = (
 		GROUP BY P.maker;
 
 		
-=======
-18. 
-19.
-20.
->>>>>>> dd56910c03ac10d1ad370c25550902298c21a92f
+
