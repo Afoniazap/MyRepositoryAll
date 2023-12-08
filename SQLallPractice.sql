@@ -134,9 +134,24 @@ Outcomes (ship, battle, result)
 		INNER JOIN PC ON P.model = PC.model
 		GROUP BY P.maker;
 		
-		
-		
-		
+22. Для каждого значения скорости ПК, превышающего 600 МГц, определите среднюю цену ПК с такой же скоростью.
+ Вывести: speed, средняя цена.		
+		SELECT PC.speed AS speed, AVG(PC.price) AS average_price
+		FROM PC
+		WHERE PC.speed > 600
+		GROUP BY PC.speed
+23. Найдите производителей, которые производили бы как ПК
+со скоростью не менее 750 МГц, так и ПК-блокноты со скоростью не менее 750 МГц.
+Вывести: Maker	
+		SELECT maker
+		FROM Product
+		WHERE model IN (SELECT model FROM PC WHERE speed >= 750)
+		INTERSECT
+		SELECT maker
+		FROM Product
+		WHERE model IN (SELECT model FROM Laptop WHERE speed >= 750);
+24. Перечислите номера моделей любых типов, имеющих самую высокую цену по всей 
+имеющейся в базе данных продукции.
 		
 		
 Первая часть.

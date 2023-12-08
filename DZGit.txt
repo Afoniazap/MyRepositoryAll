@@ -2,7 +2,7 @@
  2. Клонировать репозиторий TXT на локальный компьютер.			 git clone git@github.com:Afoniazap/TXT.git
 		
  3. Внутри локального TXT создать файл “new.txt”.	> new.txt 	cat > new.txt 	 touch new.txt 
- 4. Добавить файл под гит.				add .	        add new.txt
+ 4. Добавить файл под гит.				git add .	        add new.txt
  5. Закоммитить файл.					git commit -m "1"
  6. Отправить файл на внешний GitHub репозиторий.	git push	
  7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT. 	cat >> new.txt 	vim new.txt 		start new.txt (как вариант)
