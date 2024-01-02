@@ -439,7 +439,7 @@ Order by monthly_salary;
 
 
 
-
+other practices
 
 
 
