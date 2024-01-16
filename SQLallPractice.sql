@@ -152,7 +152,22 @@ Outcomes (ship, battle, result)
 		WHERE model IN (SELECT model FROM Laptop WHERE speed >= 750);
 24. Перечислите номера моделей любых типов, имеющих самую высокую цену по всей 
 имеющейся в базе данных продукции.
-		
+		SELECT  distinct model
+		FROM (
+		    SELECT model, price FROM PC
+		    UNION ALL
+		    SELECT model, price FROM laptop
+		    UNION ALL
+ 		   SELECT model, price FROM printer
+			) AS all_products
+				WHERE price = (SELECT MAX(price) FROM (
+			    SELECT MAX(price) AS price FROM PC
+   				 UNION ALL
+    				SELECT MAX(price) AS price FROM laptop
+  					  UNION ALL
+ 					   SELECT MAX(price) AS price FROM printer
+						) AS max_prices)
+
 		
 Первая часть.
 
